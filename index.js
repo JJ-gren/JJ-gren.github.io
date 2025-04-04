@@ -61,7 +61,7 @@ const SEARCHES = [
 const VIDEOS = [
   "https://www.youtube.com/watch?v=RHuQqLxmEyg",
   "https://www.youtube.com/watch?v=tXEPbotEjZE",
-  "https://www.youtube.com/watch?v=LabBY9A1C3k&pp=ygUPZmxpbnQgYW5kIHN0ZWVs"
+  "https://www.youtube.com/watch?v=LabBY9A1C3k"
 ]
 
 const FILE_DOWNLOADS = [
@@ -827,7 +827,7 @@ function startVideo () {
   // Set the attributes for the iframe
   iframe.width = "1800";
   iframe.height = "900";
-  iframe.src = "getRandomArrayEntry(VIDEOS)"+"?autoplay=1";
+  iframe.src = "getRandomArrayEntry(VIDEOS)"+"&autoplay=1";
   iframe.frameBorder = "0";
   iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
   iframe.allowFullscreen = true;
