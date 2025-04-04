@@ -145,6 +145,7 @@ const isParentWindow = !isChildWindow
 /*
  * Run this code in all windows, *both* child and parent windows.
  */
+console.log("cooked fish");
 init()
 
 /*
