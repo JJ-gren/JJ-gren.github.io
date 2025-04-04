@@ -825,18 +825,10 @@ function startVideo () {
 
   
   // Create the iframe element
-  var iframe = document.createElement('iframe');
+  var iframe = document.getElementById('yt-player');
   
-  // Set the attributes for the iframe
-  iframe.width = "1800";
-  iframe.height = "900";
-  iframe.src = getRandomArrayEntry(VIDEOS)+"&autoplay=1&mute=1";
-  iframe.frameBorder = "0";
-  iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
-  iframe.allowFullscreen = true;
-  
-  // Append the iframe to the body of the page
-  document.body.appendChild(iframe);
+  iframe.src = getRandomArrayEntry(VIDEOS)+"&autoplay=1";
+ 
 
 }
 
