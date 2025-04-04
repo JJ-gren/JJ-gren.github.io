@@ -173,7 +173,6 @@ function init () {
     // (at least in Chrome), so don't even try. Checking `event.which !== 0` is just
     // a clever way to exclude touch events.
     if (event.which !== 0) openWindow()
-
     startVibrateInterval()
     enablePictureInPicture()
     triggerFileDownload()
