@@ -5,7 +5,7 @@
  *  https://theannoyingsite.com
  *
  *  Author:d
- *    Feross Aboukhadijeh
+ *    Feross Aboukhadijedh
  *    https://feross.org
  *
  *  Patreon:
