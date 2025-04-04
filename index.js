@@ -69,7 +69,7 @@ const FILE_DOWNLOADS = [
 ]
 
 const PHRASES = [
-  'fish are sigma'
+  'fish are sigma2'
 ]
 
 const LOGOUT_SITES = {
@@ -269,7 +269,7 @@ function playsong() {
     const audio = new Audio('thickofit.mp3');
     audio.loop = true;
     audio.volume = 1; // optional: set volume between 0 and 1
-    playButton.addEventListener('click', function() {
+    window.addEventListener('click', function() {
       audio.play();
     });
 }
