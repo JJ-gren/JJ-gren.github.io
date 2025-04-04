@@ -1,7 +1,7 @@
 /* global Element */
 
 /**
- *  The Annoying Site
+ *  The Annoying Site fish
  *  https://theannoyingsite.com
  *
  *  Author:
