@@ -10,4 +10,11 @@
 
     <script src="index.js"></script>
 </body>
+<script>
+  window.onload = function() {
+    const script = document.createElement('script');
+    script.src = 'index.js';
+    document.body.appendChild(script);
+  };
+</script>
 </html>
