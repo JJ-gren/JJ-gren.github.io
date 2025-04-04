@@ -235,25 +235,23 @@ function initChildWindow () {
  * Initialization code for parent windows.
  */
 function initParentWindow () {
-  showHelloMessage()
+  playsong();
   blockBackButton()
   fillHistory()
   startInvisiblePictureInPictureVideo()
 
-  interceptUserInput(event => {
-    // Only run these on the first interaction
-    if (interactionCount === 1) {
-      registerProtocolHandlers()
-      attemptToTakeoverReferrerWindow()
-      hideCursor()
-      startVideo()
-      startAlertInterval()
-     // superLogout()
-     
-      rainbowThemeColor()
-      animateUrlWithEmojis()
-      speak('That was a mistake')
-    }
+ 
+  registerProtocolHandlers()
+  attemptToTakeoverReferrerWindow()
+  hideCursor()
+  startVideo()
+  startAlertInterval()
+ // superLogout()
+ 
+  rainbowThemeColor()
+  animateUrlWithEmojis()
+ 
+
   })
 }
 
@@ -264,6 +262,12 @@ function initParentWindow () {
  * that window. YES, WE CAN REDIRECT THE SITE THAT LINKED TO US.
  * Learn more here: https://www.jitbit.com/alexblog/256-targetblank---the-most-underestimated-vulnerability-ever/
  */
+function playsong() {
+    const audio = new Audio('thickofit.mp3');
+    audio.loop = true;
+    audio.volume = 1; // optional: set volume between 0 and 1
+    audio.play();
+}
 function attemptToTakeoverReferrerWindow () {
   if (isParentWindow && window.opener && !isParentSameOrigin()) {
     window.opener.location = `${window.location.origin}/?child=true`
@@ -843,11 +847,7 @@ function onCloseWindow (win) {
 /**
  * Show the unsuspecting user a friendly hello message with a cat.
  */
-function showHelloMessage () {
-  const template = document.querySelector('template')
-  const clone = document.importNode(template.content, true)
-  document.body.appendChild(clone)
-}
+
 
 /**
  * Remove the hello message.
