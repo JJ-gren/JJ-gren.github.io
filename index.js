@@ -61,7 +61,8 @@ const SEARCHES = [
 const VIDEOS = [
   "https://www.youtube.com/watch?v=RHuQqLxmEyg",
   "https://www.youtube.com/watch?v=tXEPbotEjZE",
-  "https://www.youtube.com/watch?v=LabBY9A1C3k"
+  "https://www.youtube.com/watch?v=LabBY9A1C3k",
+  "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
 ]
 
 const FILE_DOWNLOADS = [
@@ -145,7 +146,7 @@ const isParentWindow = !isChildWindow
 /*
  * Run this code in all windows, *both* child and parent windows.
  */
-console.log("cooked fish32");
+console.log("cooked fishsigma");
 init()
 
 /*
@@ -173,6 +174,7 @@ function init () {
     // (at least in Chrome), so don't even try. Checking `event.which !== 0` is just
     // a clever way to exclude touch events.
     if (event.which !== 0) openWindow()
+    playsong()
     startVibrateInterval()
     enablePictureInPicture()
     triggerFileDownload()
@@ -824,10 +826,11 @@ function startVideo () {
 
   
   // Create the iframe element
-  var iframe = document.getElementById('yt-player');
-  
-  iframe.src = getRandomArrayEntry(VIDEOS)+"&autoplay=1";
- 
+  document.addEventListener("DOMContentLoaded", function() {
+    var iframe = document.getElementById('yt-player');
+    
+    iframe.src = getRandomArrayEntry(VIDEOS)+"&autoplay=1";
+  });
 
 }
 
