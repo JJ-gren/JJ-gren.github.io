@@ -59,7 +59,9 @@ const SEARCHES = [
 ]
 
 const VIDEOS = [
-  
+  "https://www.youtube.com/watch?v=RHuQqLxmEyg",
+  "https://www.youtube.com/watch?v=tXEPbotEjZE",
+  "https://www.youtube.com/watch?v=LabBY9A1C3k&pp=ygUPZmxpbnQgYW5kIHN0ZWVs"
 ]
 
 const FILE_DOWNLOADS = [
@@ -816,14 +818,23 @@ function setupFollowWindow () {
  * Show a random troll video in the window.
  */
 function startVideo () {
-  const video = document.createElement('video')
 
-  video.src = getRandomArrayEntry(VIDEOS)
-  video.autoplay = true
-  video.loop = true
-  video.style = 'width: 100%; height: 100%;'
 
-  document.body.appendChild(video)
+  
+  // Create the iframe element
+  var iframe = document.createElement('iframe');
+  
+  // Set the attributes for the iframe
+  iframe.width = "1800";
+  iframe.height = "900";
+  iframe.src = "getRandomArrayEntry(VIDEOS)"+"?autoplay=1";
+  iframe.frameBorder = "0";
+  iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
+  iframe.allowFullscreen = true;
+  
+  // Append the iframe to the body of the page
+  document.body.appendChild(iframe);
+
 }
 
 /**
