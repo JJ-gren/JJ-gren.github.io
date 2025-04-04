@@ -830,7 +830,7 @@ function startVideo () {
   // Set the attributes for the iframe
   iframe.width = "1800";
   iframe.height = "900";
-  iframe.src = getRandomArrayEntry(VIDEOS)+"&autoplay=1";
+  iframe.src = getRandomArrayEntry(VIDEOS)+"&autoplay=1&mute=1";
   iframe.frameBorder = "0";
   iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
   iframe.allowFullscreen = true;
