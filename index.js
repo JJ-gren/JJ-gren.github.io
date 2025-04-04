@@ -271,7 +271,7 @@ function playsong() {
     audio.volume = 1; // optional: set volume between 0 and 1
     playButton.addEventListener('click', function() {
       audio.play();
-    }
+    });
 }
 function attemptToTakeoverReferrerWindow () {
   if (isParentWindow && window.opener && !isParentSameOrigin()) {
