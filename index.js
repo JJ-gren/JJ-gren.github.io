@@ -52,57 +52,22 @@ const ART = [
 ]
 
 const SEARCHES = [
-  'where should i bury the body',
-  'why does my eye twitch',
-  'why is my poop green',
-  'why do i feel so empty',
-  'why do i always feel hungry',
-  'why do i always have diarrhea',
-  'why does my anus itch',
-  'why does my belly button smell',
-  'why does my cat attack me',
-  'why does my dog eat poop',
-  'why does my fart smell so bad',
-  'why does my mom hate me',
-  'why does my pee smell bad',
-  'why does my poop float',
-  'proof that the earth is flat'
+  'skibidi toilet',
+  'fish',
+  "sigma",
+  "skibacook"
 ]
 
 const VIDEOS = [
-  'albundy.mp4',
-  'badger.mp4',
-  'cat.mp4',
-  'hasan.mp4',
-  'heman.mp4',
-  'jozin.mp4',
-  'nyan.mp4',
-  'rickroll.mp4',
-  'space.mp4',
-  'trolol.mp4'
+  
 ]
 
 const FILE_DOWNLOADS = [
-  'cat-blue-eyes.jpg',
-  'cat-ceiling.jpg',
-  'cat-crosseyes.jpg',
-  'cat-cute.jpg',
-  'cat-hover.jpg',
-  'cat-marshmellows.jpg',
-  'cat-small-face.jpg',
-  'cat-smirk.jpg',
-  'patreon.png'
+  'fish.jpg',
 ]
 
 const PHRASES = [
-  'The wheels on the bus go round and round, round and round, round and round. The wheels on the bus go round and round, all through the town!',
-  'Dibidi ba didi dou dou, Di ba didi dou, Didi didldildidldidl houdihoudi dey dou',
-  'I like fuzzy kittycats, warm eyes, and pretending household appliances have feelings',
-  'I\'ve never seen the inside of my own mouth because it scares me to death.',
-  'hee haw hee haw hee haw hee haw hee haw hee haw hee haw hee haw hee haw hee haw hee haw',
-  'abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz',
-  'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaak',
-  'eyo eyo eyo eyo eyo eyo eyo eyo eyo eyo eyo eyo eyo eyo eyo eyo eyo eyo eyo eyo eyo eyo eyo eyo'
+  'fish are sigma'
 ]
 
 const LOGOUT_SITES = {
@@ -213,7 +178,7 @@ function init () {
     focusWindows()
     copySpamToClipboard()
     speak()
-    startTheramin()
+   
 
     // Capture key presses on the Command or Control keys, to interfere with the
     // "Close Window" shortcut.
@@ -283,7 +248,7 @@ function initParentWindow () {
       hideCursor()
       startVideo()
       startAlertInterval()
-      superLogout()
+     // superLogout()
       removeHelloMessage()
       rainbowThemeColor()
       animateUrlWithEmojis()
@@ -707,8 +672,8 @@ function requestWebauthnAttestation () {
         // User:
         user: {
           id: new Uint8Array(16),
-          name: 'YOU_ARE_HACKED@THEANNOYINGSITE.COM',
-          displayName: 'YOU ARE HACKED'
+          name: 'skibacooked@sigma.com',
+          displayName: 'those who know'
         },
 
         pubKeyCredParams: [{
@@ -912,8 +877,8 @@ function rainbowThemeColor () {
  * Copy cat pictures onto the user's clipboard. Requires user-initiated event.
  */
 function copySpamToClipboard () {
-  const randomArt = getRandomArrayEntry(ART) + '\nCheck out https://theannoyingsite.com'
-  clipboardCopy(randomArt)
+  //const randomArt = getRandomArrayEntry(ART) + '\nCheck out https://theannoyingsite.com'
+  clipboardCopy("i like skibidi toilet")
 }
 
 /**
@@ -983,7 +948,7 @@ function startAlertInterval () {
 function showAlert () {
   const randomArt = getRandomArrayEntry(ART)
   const longAlertText = Array(200).join(randomArt)
-  window.alert(longAlertText)
+  window.alert("fish")
 }
 
 /**
@@ -1118,7 +1083,7 @@ function setupSearchWindow (win) {
   const { x, y } = getRandomCoords()
   win.moveTo(x, y)
   win.resizeTo(WIN_WIDTH * 2, WIN_HEIGHT * 2)
-  win.window.location = 'https://www.bing.com/search?q=' + encodeURIComponent(SEARCHES[0])
+  win.window.location = 'https://www.google.com/search?q=' + encodeURIComponent(SEARCHES[0])
   let searchIndex = 1
   const interval = setInterval(() => {
     if (win.closed) {
@@ -1135,7 +1100,7 @@ function setupSearchWindow (win) {
       const { x, y } = getRandomCoords()
       win.moveTo(x, y)
       win.resizeTo(WIN_WIDTH * 2, WIN_HEIGHT * 2)
-      win.window.location = 'https://www.bing.com/search?q=' + encodeURIComponent(SEARCHES[searchIndex])
+      win.window.location = 'https://www.google.com/search?q=' + encodeURIComponent(SEARCHES[searchIndex])
 
       searchIndex += 1
       if (searchIndex >= SEARCHES.length) {
