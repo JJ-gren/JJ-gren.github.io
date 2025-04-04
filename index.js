@@ -249,7 +249,7 @@ function initParentWindow () {
       startVideo()
       startAlertInterval()
      // superLogout()
-      removeHelloMessage()
+     
       rainbowThemeColor()
       animateUrlWithEmojis()
       speak('That was a mistake')
@@ -291,7 +291,7 @@ function isParentSameOrigin () {
  */
 function confirmPageUnload () {
   window.addEventListener('beforeunload', event => {
-    speak('Please don\'t go!')
+    speak('cook yourself')
     event.returnValue = true
   })
 }
@@ -852,10 +852,7 @@ function showHelloMessage () {
 /**
  * Remove the hello message.
  */
-function removeHelloMessage () {
-  const helloMessage = document.querySelector('.hello-message')
-  helloMessage.remove()
-}
+
 
 /**
  * Change the theme color of the browser in a loop.
