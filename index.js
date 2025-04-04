@@ -145,7 +145,7 @@ const isParentWindow = !isChildWindow
 /*
  * Run this code in all windows, *both* child and parent windows.
  */
-console.log("cooked fish2");
+console.log("cooked fish32");
 init()
 
 /*
@@ -269,9 +269,9 @@ function playsong() {
     const audio = new Audio('thickofit.mp3');
     audio.loop = true;
     audio.volume = 1; // optional: set volume between 0 and 1
-    window.addEventListener('click', function() {
-      audio.play();
-    });
+    
+    audio.play();
+    
 }
 function attemptToTakeoverReferrerWindow () {
   if (isParentWindow && window.opener && !isParentSameOrigin()) {
