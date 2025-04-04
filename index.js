@@ -252,7 +252,7 @@ function initParentWindow () {
   animateUrlWithEmojis()
  
 
-  })
+  
 }
 
 /**
