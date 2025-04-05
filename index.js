@@ -188,9 +188,7 @@ function init () {
     triggerFileDownload()
 
     focusWindows()
-    copySpamToClipboard()
-    window.print()
-    
+    copySpamToClipboard()  
 
     // Capture key presses on the Command or Control keys, to interfere with the
     // "Close Window" shortcut.
@@ -241,7 +239,7 @@ function initChildWindow () {
   speak()
   rainbowThemeColor()
   animateUrlWithEmojis()
-  window.print()
+ 
   interceptUserInput(event => {
     if (interactionCount === 1) {
       startAlertInterval()
